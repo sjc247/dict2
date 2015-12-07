@@ -1,0 +1,33 @@
+#ifndef DICTIONARY_H
+#define DICTIONARY_H
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <iostream>
+#include <string>
+using namespace std;
+using std::string;
+#define MAX 100
+typedef int BOOL;
+typedef string WORD;
+typedef WORD DICT[MAX];
+int LocateWord(DICT, WORD);
+BOOL FullDictionary(DICT);
+BOOL InsertWord(DICT,WORD);
+WORD GetNextWord(void);
+void DumpDictionary(DICT ,int[]);
+/*
+note that these are global variables so that they are already initialized to 0
+*/
+extern DICT dictionary; //your dictionary
+extern WORD word; //
+extern int count[MAX]; //tracks word frequency
+extern int NumWords;
+extern int badcount;
+/*
+HOW TO COMPILE
+g++ -c dictionary.cpp
+g++ -c main.cpp
+g++ dictionary.o main.o -o DICTIONARY
+*/
+#endif
